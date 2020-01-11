@@ -1,0 +1,27 @@
+.table_head{
+	background-color: #ff9900;
+	
+	 border: 1px solid #ddd;
+	font: bold;
+}
+.table_column{
+	 border: 1px solid #ddd;
+	
+}
+.table_menu{ 
+	
+	height: 50%;
+	
+
+  	background-color: #4a4a4a;
+}
+.navbar {
+  overflow: hidden;
+  margin-top: 5%;
+  height: 8%;
+  text-align: center;
+  background-color: #4a4a4a;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
