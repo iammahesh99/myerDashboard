@@ -36,9 +36,9 @@ class Dashboard extends Component {
 
    
   componentDidMount(){
-    const uri='https://myerdashboardserver.herokuapp.com/stablestructure';
-    const uri2='https://myerdashboardserver.herokuapp.com/stablesize';
-    const uri3='https://myerdashboardserver.herokuapp.com/sdashboardStructure';
+    const uri='https://myerdashboardserver.herokuapp.com/tablestructure';
+    const uri2='https://myerdashboardserver.herokuapp.com/tablesize';
+    const uri3='https://myerdashboardserver.herokuapp.com/dashboardStructure';
     //console.log(uri)
 
       Promise.all([
