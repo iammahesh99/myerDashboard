@@ -1,12 +1,17 @@
 import React,{Component} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
+import Popover from '@material-ui/core/Popover';
 import PropTypes from 'prop-types';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
-import AllInOne from '../Component/AllInOne'
 import AppBar from '@material-ui/core/AppBar';
 import '../CssFile/Shipment.css';
+import ChartData from '../Component/ChartData'
+
+
 
 const styles = theme => ({
    root: {
@@ -21,7 +26,7 @@ const styles = theme => ({
   
 });
 
-class Dashboard extends Component {
+class ChartAnalysis extends Component {
 
    constructor(props) {
     super(props);
@@ -36,9 +41,9 @@ class Dashboard extends Component {
 
    
   componentDidMount(){
-    const uri='http://localhost:5000/tablestructure';
-    const uri2='http://localhost:5000/tablesize';
-    const uri3='http://localhost:5000/dashboardStructure';
+    const uri='http://localhost:5000/charttable';
+    const uri2='http://localhost:5000/charttablesize';
+    const uri3='http://localhost:5000/charttablestructure';
     //console.log(uri)
 
       Promise.all([
@@ -104,10 +109,10 @@ render(){
 
                                   let cellID = `cell${i}-${idx}`
                                   cell.push(<div key={cellID} id={cellID}
-                                  style={{display:'inline-block',width:tablewidth,marginRight:'2%',marginBottom:'2%',
+                                  style={{float: 'left',width:tablewidth,marginRight:'2%',marginBottom:'2%',
                                   backgroundColor:'#F0FFFF'
                                   }}  
-                                    ><AllInOne tableName={res.tableName} /></div>)
+                                    ><ChartData chartName={res.tableName} /></div>)
                                     
                                   }
                               }
@@ -131,14 +136,14 @@ render(){
 	 
   return (
     <div style={{width:'100%'}}>
-    <h2 style={{textAlign:'center'}}>Support Dashboard</h2>
+    <h2 style={{textAlign:'center'}}>Chart Analysis</h2>
       {rows}
     </div>
   );
   }
 }
-Dashboard.propTypes = {
+ChartAnalysis.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Dashboard);
+export default withStyles(styles)(ChartAnalysis);

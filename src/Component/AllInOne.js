@@ -39,7 +39,7 @@ class AllInOne extends Component{
 
 componentDidMount() {
     
-    const uri='https://myerdashboardserver.herokuapp.com/'+this.state.tableName;
+    const uri='http://localhost:5000/'+this.state.tableName;
     // //console.log(uri)
 
       fetch(uri,{

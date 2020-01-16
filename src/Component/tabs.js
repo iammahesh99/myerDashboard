@@ -9,7 +9,9 @@ import Box from '@material-ui/core/Box';
 import HomeIcon from '@material-ui/icons/Home';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import Dashboard from '../Component/dashboard.js';
+import ChartAnalysis from '../Component/ChartAnalysis';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+
 
 
 export function TabPanel(props) {
@@ -58,7 +60,7 @@ export default function SimpleTabs() {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor:'#E6E6FA'}}>
       <AppBar position="sticky">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
          <Tab label="Home" icon={<HomeIcon />} {...a11yProps(0)} />
@@ -70,7 +72,7 @@ export default function SimpleTabs() {
         <Dashboard />
       </TabPanel>
       <TabPanel value={value} index={1} style={{backgroundColor:'#E6E6FA'}}>
-        
+        <ChartAnalysis />
       </TabPanel>
       <TabPanel value={value} index={2} style={{backgroundColor:'#E6E6FA'}}>
         Screen three
