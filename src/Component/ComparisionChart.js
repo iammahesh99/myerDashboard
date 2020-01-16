@@ -36,7 +36,7 @@ class ComparisionChart extends Component{
 
 
 componentDidMount() {
-		const uri='http://localhost:5000/salesData';
+		const uri='https://myerdashboardserver.herokuapp.com/salesData';
 		//console.log(uri)
 
     	fetch(uri,{

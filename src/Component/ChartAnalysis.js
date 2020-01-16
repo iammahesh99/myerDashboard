@@ -41,9 +41,9 @@ class ChartAnalysis extends Component {
 
    
   componentDidMount(){
-    const uri='http://localhost:5000/charttable';
-    const uri2='http://localhost:5000/charttablesize';
-    const uri3='http://localhost:5000/charttablestructure';
+    const uri='https://myerdashboardserver.herokuapp.com/charttable';
+    const uri2='https://myerdashboardserver.herokuapp.com/charttablesize';
+    const uri3='https://myerdashboardserver.herokuapp.com/charttablestructure';
     //console.log(uri)
 
       Promise.all([
