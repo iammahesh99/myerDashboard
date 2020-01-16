@@ -29,7 +29,6 @@ class SalesData extends Component{
 componentDidMount() {
 		const uri='https://myerdashboardserver.herokuapp.com/salesData';
 		//console.log(uri)
-
     	fetch(uri,{
         method: 'GET',
         })
@@ -46,7 +45,7 @@ componentDidMount() {
 								label:'store1',
 								backgroundColor: "rgba(225, 204,230, .3)",
           						borderColor: "rgb(205, 130, 158)",
-								data: [65, 59, 80, 81, 56, 55, 40]
+								data: [65, 59, 80, 81, 58, 55, 40]
 								
 								
 

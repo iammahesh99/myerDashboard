@@ -45,7 +45,6 @@ class ChartData extends Component{
 
 			</div>
 
-
 			)
 	}
 }
