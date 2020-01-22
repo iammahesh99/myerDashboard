@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import AllInOne from '../Component/AllInOne'
 import AppBar from '@material-ui/core/AppBar';
 import '../CssFile/Shipment.css';
+import ChartData from '../Component/ChartData'
 
 const styles = theme => ({
    root: {
@@ -104,10 +105,10 @@ render(){
 
                                   let cellID = `cell${i}-${idx}`
                                   cell.push(<div key={cellID} id={cellID}
-                                  style={{display:'inline-block',width:tablewidth,marginRight:'2%',marginBottom:'2%',
+                                  style={{float: 'left',width:tablewidth,marginRight:'2%',marginBottom:'2%',
                                   backgroundColor:'#F0FFFF'
                                   }}  
-                                    ><AllInOne tableName={res.tableName} /></div>)
+                                    ><ChartData tableName={res.url} type={res.type} /></div>)
                                     
                                   }
                               }
@@ -131,7 +132,7 @@ render(){
 	 
   return (
     <div style={{width:'100%'}}>
-    <h2 style={{textAlign:'center'}}>Support Dashboard</h2>
+    <h4 style={{textAlign:'center'}}>Critical Analysis</h4>
       {rows}
     </div>
   );

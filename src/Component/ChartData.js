@@ -2,6 +2,7 @@ import React,{Component} from "react"
 import SalesData from '../Component/SalesData'
 import Soh from '../Component/Soh'
 import ComparisionChart from '../Component/ComparisionChart'
+import AllInOne from '../Component/AllInOne'
 
 class ChartData extends Component{
 
@@ -10,7 +11,8 @@ class ChartData extends Component{
 		
 		this.state= {
 			
-			chartName:props.chartName
+			type:props.type,
+			tableName:props.tableName
 			
 
 		}
@@ -19,16 +21,17 @@ class ChartData extends Component{
 	}
 
 	showChart=()=>{
-		if(this.state.chartName=='salesData')
+		if(this.state.type=='table')
+		{
+			return < AllInOne tableName={this.state.tableName}  />
+		}
+		else if(this.state.type=='chart' && this.state.tableName=='SalesData')
 		{
 			return < SalesData />
 		}
-		else if(this.state.chartName=='soh')
+		else if(this.state.type=='chart' && this.state.tableName=='SOH')
 		{
 			return < Soh />
-		}else if(this.state.chartName=='compareChart')
-		{
-			return < ComparisionChart />
 		}
 
 

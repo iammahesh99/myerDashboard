@@ -51,7 +51,7 @@ componentDidMount() {
 
     const Data = resData.jsonObj;
 
-    console.log(Data);
+    
 
     this.setState({hit:Data});
       
@@ -60,7 +60,7 @@ componentDidMount() {
 
 
   render(){
-   console.log(this.state.hit);
+  
    const open = Boolean(this.state.alerAnchor1);
    const alertId = 'primary-notification-account-menu';
               const renderAlertError = (
