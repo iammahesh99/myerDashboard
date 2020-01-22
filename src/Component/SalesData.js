@@ -27,7 +27,7 @@ class SalesData extends Component{
 
 
 componentDidMount() {
-		const uri='https://myerdashboardserver.herokuapp.com/salesData';
+		const uri='https://myerdashboardserver.herokuapp.com/tablestructure';
 		//console.log(uri)
     	fetch(uri,{
         method: 'GET',

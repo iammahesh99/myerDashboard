@@ -62,7 +62,7 @@ export default function SimpleTabs() {
 
   useEffect(() => {
 
-    const uri='http://localhost:5000/appbar';
+    const uri='https://myerdashboardserver.herokuapp.com/appbar';
     
     fetch(uri,{
         method: 'GET',
