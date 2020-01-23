@@ -80,7 +80,7 @@ componentDidMount() {
 		
 		return (
 			
-			<div>
+			<div style={{height:'100%'}}>
 			 <label>Select Store:  </label>
 		          <select id="soflow" ref="visual" value={this.props.value} onChange={this.handleChange}>
 		            {visualOptions}

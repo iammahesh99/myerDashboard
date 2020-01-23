@@ -105,8 +105,8 @@ render(){
 
                                   let cellID = `cell${i}-${idx}`
                                   cell.push(<div key={cellID} id={cellID}
-                                  style={{float: 'left',width:tablewidth,marginRight:'2%',marginBottom:'2%',
-                                  backgroundColor:'#F0FFFF'
+                                  style={{display:'inline-block',width:tablewidth,marginRight:'1%',marginBottom:'1%',
+                                  backgroundColor:'#F0FFFF',height:'20%'
                                   }}  
                                     ><ChartData tableName={res.url} type={res.type} /></div>)
                                     

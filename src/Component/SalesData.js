@@ -78,7 +78,7 @@ componentDidMount() {
 		return (
 			
 			<div  >
-			<h3 style={{textAlign:'center'}}>Per Hour SalesData</h3>
+			<h4 style={{textAlign:'center'}}>Per Hour SalesData</h4>
 			<Line 
 				 data={this.state.chartData}
 				 options={{

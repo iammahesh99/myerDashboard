@@ -79,9 +79,9 @@ componentDidMount() {
                   <div style={{}}>
                   <h3 style={{color:'red',textAlign:'center'}}>Message Errors Log</h3>
                   <ul>
-                  <li style={{color:'red'}}> Order is in worksheet status</li>
-                  <li style={{color:'red'}}> Location is inactive</li>
-                  <li style={{color:'red'}}> Failed due to timing issue</li>
+                  <li > Order is in worksheet status</li>
+                  <li > Location is inactive</li>
+                  <li > Failed due to timing issue</li>
                   </ul>
                   </div>
                     
@@ -111,7 +111,7 @@ componentDidMount() {
 
 
       { this.state.hit.map(data=>(
-        <tr  style={{overflow:'wrap'}}  onMouseOver={this.handleAlertMenuOpen}>
+        <tr  style={{overflow:'wrap',backgroundColor:data.count>20?'red':null}}  onMouseOver={this.handleAlertMenuOpen}>
         {Object.entries(data).map(([make, type]) => (
             <td className="table_column" style={{overflow:'wrap'}}>
                 {type}
