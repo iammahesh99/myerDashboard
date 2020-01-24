@@ -49,15 +49,15 @@ componentDidMount() {
 
         this.setState({
          chartData:{
-				labels: ["Dept1","Dept2","Dept3","Dept4"],
+				labels: ["lifestyle","fruits","meat","dairy"],
 				datasets:[
 							{
 								label:'SOH',
 								backgroundColor: [
-										            "rgba(255, 134,159,0.6)",
-										            "rgba(98,  182, 239,0.6)",
-										            "rgba(255, 218, 128,0.6)",
-										            "rgba(113, 205, 205,0.6)"
+										            "rgba(255, 134,159,0.8)",
+										            "rgba(98,  182, 239,0.8)",
+										            "rgba(255, 218, 128,0.8)",
+										            "rgba(113, 205, 205,0.8)"
 										          ],
           						borderColor: "rgb(205, 130, 158)",
 								data: [65, 59, 80, 81,]
