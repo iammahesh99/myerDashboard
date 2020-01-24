@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Line} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
+import PropTypes from 'prop-types';
+
 
 //import Dropdown from './Dropdown';
 
@@ -16,14 +18,23 @@ class SalesData extends Component{
 		this.state= {
 			
 			chartData: {},
+			storeName:'Store1'
 			
 
 		}
-
+			this.handleChange = this.handleChange.bind(this);
 
 	}
 
+static defaultProps = {
+	    visuals: ['store1','Store2', 'Store3']
+	  }
 
+ handleChange(event) {
+ 	this.setState({storeName:event.target})
+    
+    
+  }
 
 
 componentDidMount() {
@@ -42,27 +53,19 @@ componentDidMount() {
 				labels: ["9am", "10am", "11am", "12am", "1pm", "2pm", "3pm"],
 				datasets:[
 							{
-								label:'store1',
-								backgroundColor: "rgba(225, 204,230, .3)",
+								label:this.state.storeName,
+								backgroundColor: [
+										            "rgba(255, 134,159,0.8)",
+										            "rgba(98,  182, 239,0.8)",
+										            "rgba(255, 218, 128,0.8)",
+										            "rgba(113, 205, 205,0.8)",
+										            "rgba(98,  182, 239,0.8)",
+										            "rgba(255, 218, 128,0.8)",
+										            "rgba(113, 205, 205,0.8)"
+										          ],
           						borderColor: "rgb(205, 130, 158)",
-								data: [65, 59, 80, 81, 58, 55, 40]
+								data: [65, 52, 60, 31, 48, 25, 40]
 								
-								
-
-							},
-							{
-								label:'store2',
-								backgroundColor: "rgba(184, 185, 210, .3)",
-          						borderColor: "rgb(35, 26, 136)",
-								data: [28, 48, 40, 19, 86, 27, 90]
-								
-
-							},
-							{
-								label:'store3',
-								backgroundColor: "rgba(255, 255, 0, .3)",
-          						borderColor: "rgb(255, 255, 0)",
-								data: [21, 12, 10, 59, 96, 47, 90]
 								
 
 							}
@@ -74,12 +77,22 @@ componentDidMount() {
 
 
 	render(){
+				let visualOptions = this.props.visuals.map(visual => {
+		      return <option key={visual} value={visual}>{visual}</option>
+		    });
 		
 		return (
 			
-			<div  >
-			<h4 style={{textAlign:'center'}}>Per Hour SalesData</h4>
-			<Line 
+			<div style={{height:'100%'}}>
+			<label style={{textAlign:'center',marginLeft:'70px',fontWeight: 'bold'}}>Rtlog file count per hour per store</label><br/>
+
+			 <label>Select Store:  </label>
+		          <select id="soflow" ref="visual" value={this.props.value} onChange={this.handleChange}>
+		            {visualOptions}
+		          </select>
+		          
+
+			<Bar 
 				 data={this.state.chartData}
 				 options={{
 						 	legend:{
@@ -112,5 +125,9 @@ componentDidMount() {
 			)
 	}
 }
-
+SalesData.propTypes = {
+  visualChange: PropTypes.func,
+  visuals: PropTypes.array,
+  value: PropTypes.string
+};
 export default SalesData;

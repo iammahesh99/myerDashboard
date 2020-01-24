@@ -81,6 +81,7 @@ componentDidMount() {
 		return (
 			
 			<div style={{height:'100%'}}>
+			<label style={{textAlign:'center',marginLeft:'100px',fontWeight: 'bold'}}>Current SOH of Store</label><br/>
 			 <label>Select Store:  </label>
 		          <select id="soflow" ref="visual" value={this.props.value} onChange={this.handleChange}>
 		            {visualOptions}
