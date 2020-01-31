@@ -8,6 +8,7 @@ import AllInOne from '../Component/AllInOne'
 import AppBar from '@material-ui/core/AppBar';
 import '../CssFile/Shipment.css';
 import ChartData from '../Component/ChartData'
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
    root: {
@@ -105,7 +106,7 @@ render(){
 
                                   let cellID = `cell${i}-${idx}`
                                   cell.push(<div key={cellID} id={cellID}
-                                  style={{display:'inline-block',width:tablewidth,marginRight:'1%',marginBottom:'2%',
+                                  style={{float:'left',width:tablewidth,marginRight:'1%',marginBottom:'2%',
                                   backgroundColor:'#F0FFFF',height:'20%'
                                   }}  
                                     ><ChartData tableName={res.url} type={res.type} /></div>)
@@ -121,9 +122,9 @@ render(){
             }
       })
       
-      rows.push(<div key={i} id={rowID}>
+      rows.push(<Grid container spacing={2}>
       
-      {cell}</div>)
+      {cell}</Grid>)
     }
     
 
@@ -133,7 +134,9 @@ render(){
   return (
     <div style={{width:'100%'}}>
     <h4 style={{textAlign:'center'}}>Critical Analysis</h4>
+    <Grid>
       {rows}
+      </Grid>
     </div>
   );
   }

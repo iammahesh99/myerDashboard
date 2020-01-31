@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
+import ReactSimpleCarousel from "react-plain-carousel";
 
-//import Dropdown from './Dropdown';
+
 
 
 
@@ -17,6 +18,8 @@ class Soh extends Component{
 		this.state= {
 			
 			chartData: {},
+			data1:props.data,
+			storeName:props.store
 			
 
 		}
@@ -60,7 +63,7 @@ componentDidMount() {
 										            "rgba(113, 205, 205,0.8)"
 										          ],
           						borderColor: "rgb(205, 130, 158)",
-								data: [65, 59, 80, 81,]
+								data: this.state.data1
 								
 								
 
@@ -81,11 +84,12 @@ componentDidMount() {
 		return (
 			
 			<div style={{height:'100%'}}>
-			<label style={{textAlign:'center',marginLeft:'100px',fontWeight: 'bold'}}>Current SOH of Store</label><br/>
+			<label style={{textAlign:'center',marginLeft:'100px',fontWeight: 'bold'}}>Current SOH of {this.state.storeName}</label><br/>
 			 <label>Select Store:  </label>
 		          <select id="soflow" ref="visual" value={this.props.value} onChange={this.handleChange}>
 		            {visualOptions}
 		          </select>
+		       
 
 				<Bar 
 				 data={this.state.chartData}
@@ -115,8 +119,10 @@ componentDidMount() {
 					}
 					  
 			/>
+			
 				
 			 </div>
+			 
 			)
 	}
 }
